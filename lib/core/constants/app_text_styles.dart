@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Typography scale (Plus Jakarta Sans). Styles hold no color — apply color
+/// separately so the same style works on any background/theme.
 class AppTextStyles {
   AppTextStyles._();
   static const TextStyle h1 = TextStyle(

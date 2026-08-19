@@ -1,3 +1,4 @@
+/// Spacing, radius, and other numeric design tokens shared across the app.
 class AppSizes {
   AppSizes._();
 

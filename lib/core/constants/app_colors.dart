@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+/// Raw color palette (design tokens). No theming logic — just the values.
 class AppColors {
   AppColors._();
 
