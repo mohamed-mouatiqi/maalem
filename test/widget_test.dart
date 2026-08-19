@@ -5,6 +5,6 @@ void main() {
   testWidgets('App builds without crashing', (WidgetTester tester) async {
     await tester.pumpWidget(const MaalemApp());
 
-    expect(find.text('Theme Preview'), findsOneWidget);
+    expect(find.text('Get Started'), findsOneWidget);
   });
 }

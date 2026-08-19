@@ -19,6 +19,8 @@ dependencies:
   go_router: ^17.5.0
   flutter_bloc: ^9.1.1
   equatable: ^2.1.0
+  flutter_svg: ^2.3.0
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +37,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/onboarding/
 
   fonts:
     - family: PlusJakartaSans
