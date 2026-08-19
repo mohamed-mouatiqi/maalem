@@ -87,7 +87,11 @@ class _AppOtpInputState extends State<AppOtpInput> {
               maxLength: 1,
               style: AppTextStyles.h3,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: const InputDecoration(counterText: ''),
+              decoration: const InputDecoration(
+                counterText: '',
+                isDense: true,
+                contentPadding: EdgeInsets.zero,
+              ),
               onChanged: (value) => _onDigitChanged(value, index),
             ),
           ),

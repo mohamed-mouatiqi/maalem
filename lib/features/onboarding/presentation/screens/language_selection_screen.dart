@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:maalem/core/constants/app_colors.dart';
 import 'package:maalem/core/constants/app_sizes.dart';
 import 'package:maalem/core/constants/app_text_styles.dart';
+import 'package:maalem/core/routing/app_routes.dart';
 import 'package:maalem/core/services/language_storage.dart';
 import 'package:maalem/core/widgets/inputs/app_button.dart';
 
@@ -41,7 +43,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
     await LanguageStorage.save(_selectedCode);
     if (!mounted) return;
     setState(() => _isSaving = false);
-    // TODO: navigate to Login/Choose Role once that screen exists.
+    context.push(AppRoutes.chooseRole);
   }
 
   @override

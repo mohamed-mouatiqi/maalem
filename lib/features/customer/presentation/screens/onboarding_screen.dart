@@ -9,7 +9,7 @@ import 'package:maalem/core/widgets/inputs/app_button.dart';
 
 /// Static content for one onboarding slide. Not a domain model — it never
 /// comes from the backend, so it stays private to this screen rather than
-/// living in features/auth/data/models/.
+/// living in features/customer/data/models/.
 class _OnboardingPage {
   const _OnboardingPage({
     required this.image,
@@ -45,14 +45,14 @@ const _pages = [
 /// Swipeable intro carousel shown once after Splash. StatefulWidget (not a
 /// Cubit) because the current-page index is transient UI state, not
 /// something any other part of the app needs to know about.
-class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+class CustomerOnboardingScreen extends StatefulWidget {
+  const CustomerOnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<CustomerOnboardingScreen> createState() => _CustomerOnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _CustomerOnboardingScreenState extends State<CustomerOnboardingScreen> {
   final _pageController = PageController();
   int _currentPage = 0;
 
@@ -66,7 +66,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _onNext() {
     if (_isLastPage) {
-      context.go(AppRoutes.languageSelection);
+      context.push(AppRoutes.customerSignUp);
       return;
     }
     _pageController.nextPage(
@@ -86,7 +86,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
-                  onPressed: () => context.go(AppRoutes.languageSelection),
+                  onPressed: () => context.push(AppRoutes.customerSignUp),
                   child: const Text('Skip'),
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants/app_colors.dart';
 import '../../constants/app_sizes.dart';
@@ -17,12 +18,14 @@ class AppButton extends StatelessWidget {
     this.variant = AppButtonVariant.primary,
     this.icon,
     this.isLoading = false,
+     this.svgIcon,
   });
 
   final String label;
   final VoidCallback? onPressed;
   final AppButtonVariant variant;
   final IconData? icon;
+  final String? svgIcon;
   final bool isLoading;
 
   bool get _isEnabled => onPressed != null && !isLoading;
@@ -67,7 +70,10 @@ class AppButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (icon != null) ...[
+                  if (icon != null || svgIcon !=null) ...[
+                    if(svgIcon != null)
+                      SvgPicture.asset(svgIcon! , width: 20, height: 20,)
+                    else 
                     Icon(icon, size: 20),
                     const SizedBox(width: AppSizes.spacingSmall),
                   ],
