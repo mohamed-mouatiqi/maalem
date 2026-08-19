@@ -4,6 +4,8 @@ import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 import '../constants/app_text_styles.dart';
 
+/// Assembles AppColors/AppSizes/AppTextStyles into a single Flutter
+/// ThemeData, wired into MaterialApp in main.dart.
 class AppTheme {
   AppTheme._();
 
