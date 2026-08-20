@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:maalem/features/customer/presentation/screens/localisation_sign_up_screen.dart';
-import 'package:maalem/features/customer/presentation/screens/onboarding_screen.dart';
-import 'package:maalem/features/customer/presentation/screens/phone_verification_screen.dart';
-import 'package:maalem/features/customer/presentation/screens/sign_up_screen.dart';
+import 'package:maalem/features/customer/auth/screens/screens/localisation_sign_up_screen.dart';
+import 'package:maalem/features/customer/auth/screens/screens/onboarding_screen.dart';
+import 'package:maalem/features/customer/auth/screens/screens/phone_verification_screen.dart';
+import 'package:maalem/features/customer/auth/screens/screens/sign_up_screen.dart';
 import 'package:maalem/features/onboarding/cubit/sign_up_cubit.dart';
 import 'package:maalem/features/onboarding/presentation/screens/choose_role_screen.dart';
 import 'package:maalem/features/onboarding/presentation/screens/language_selection_screen.dart';

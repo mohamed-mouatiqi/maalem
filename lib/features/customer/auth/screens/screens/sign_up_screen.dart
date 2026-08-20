@@ -25,11 +25,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   String _completePhoneNumber = '';
 
-  void _onContinueWithGoogle() {
+  void _onConnectWithGoolge() {
     // TODO: wire google_sign_in + backend OAuth endpoint.
     AppSnackbar.showError(context, 'Google sign-in is coming soon.');
   }
-
+void _onConnectWithApple() {
+    // TODO: wire apple_sign_in + backend OAuth endpoint.
+    AppSnackbar.showError(context, 'Apple sign-in is coming soon.');
+  }
   void _onContinue() {
     // Runs every field's validator (including IntlPhoneField's built-in
     // per-country length check) and paints red borders/error text on
@@ -71,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const SizedBox(height: AppSizes.spacingMedium),
                 Text(
-                  'Create Your Account',
+                  'Log In or Sign Up',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.h2,
                 ),
@@ -86,10 +89,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const SizedBox(height: AppSizes.spacingLarge),
                 AppButton(
-                  label: 'Continue with Google',
+                  label: 'Connect with Google',
                   variant: AppButtonVariant.outlined,
-                  svgIcon: 'assets/icons/icons8-google.svg',
-                  onPressed: _onContinueWithGoogle,
+                  svgIcon: 'assets/icons/google-icon.svg',
+                  onPressed: _onConnectWithGoolge,
+                ),
+                const SizedBox(height: AppSizes.spacingLarge),
+                AppButton(
+                  label: 'Connect with Apple',
+                  variant: AppButtonVariant.outlined,
+                  svgIcon: 'assets/icons/apple-icon.svg',
+                  onPressed: _onConnectWithApple,
                 ),
                 const SizedBox(height: AppSizes.spacingLarge),
                 Row(
@@ -119,7 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 const SizedBox(height: 6),
-                // phone number   intlphone number 
+                // phone number   intlphone number
                 IntlPhoneField(
                   initialCountryCode: 'MA',
                   keyboardType: TextInputType.phone,
@@ -155,12 +165,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: AppColors.textTertiary,
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(AppSizes.radiusSmall),
+                        borderRadius: BorderRadius.circular(
+                          AppSizes.radiusSmall,
+                        ),
                         borderSide: const BorderSide(color: AppColors.outline),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(AppSizes.radiusSmall),
-                        borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+                        borderRadius: BorderRadius.circular(
+                          AppSizes.radiusSmall,
+                        ),
+                        borderSide: const BorderSide(
+                          color: AppColors.primary,
+                          width: 1.5,
+                        ),
                       ),
                     ),
                   ),

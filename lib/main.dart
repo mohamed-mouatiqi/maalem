@@ -8,7 +8,7 @@ void main() {
 }
 
 /// App entry point. Wires the theme (AppTheme) and routing (appRouter)
-/// together — this is the only file allowed to depend on both.
+/// together — this is the only file allowed to depend on both. 
 class MaalemApp extends StatelessWidget {
   const MaalemApp({super.key});
 
